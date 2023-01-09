@@ -95,15 +95,15 @@ public class MyList {
         while (p != null && p != q) {
             p = p.next;
         }
-        return (p == null);
+        return (p != null);
     }
 
     //(4) - insert a node after a position
     void insertAfter(Node q, Person person) {
         if (isEmpty() || q == null)
             return;
-//        if (!isInList(q))
-//            return;
+        if (!isInList(q))
+            return;
         Node p = new Node(person, q.next);
         q.next = p;
         if (tail == q)
